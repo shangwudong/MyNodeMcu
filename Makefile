@@ -71,6 +71,7 @@ else
     endif
     ifeq ($(UNAME_S),Darwin)
 # OSX
+	ESPPORT = /dev/cu.SLAB_USBtoUART
     endif
     UNAME_P := $(shell uname -p)
     ifeq ($(UNAME_P),x86_64)
