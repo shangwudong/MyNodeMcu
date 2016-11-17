@@ -34,7 +34,7 @@ static int math_abs (lua_State *L) {
   return 1;
 }
 
-#ifndef LUA_NUMBER_INTEGRAL
+//#ifndef LUA_NUMBER_INTEGRAL
 #if 1
 static int math_sin (lua_State *L) {
   lua_pushnumber(L, sin(luaL_checknumber(L, 1)));
@@ -111,7 +111,7 @@ static int math_modf (lua_State *L) {
 }
 #endif
 
-#else  // #ifndef LUA_NUMBER_INTEGRAL
+//#else  // #ifndef LUA_NUMBER_INTEGRAL
 
 // In integer math, floor() and ceil() give the same value;
 // having them in the integer library allows you to write code that
@@ -123,7 +123,7 @@ static int math_identity (lua_State *L) {
   return 1;
 }
 
-#endif // #ifndef LUA_NUMBER_INTEGRAL
+//#endif // #ifndef LUA_NUMBER_INTEGRAL
 
 #ifdef LUA_NUMBER_INTEGRAL
 // Integer square root for integer version
@@ -174,8 +174,8 @@ static int math_pow (lua_State *L) {
 #endif
 
 
-#ifndef LUA_NUMBER_INTEGRAL
-#if 0
+//#ifndef LUA_NUMBER_INTEGRAL
+#if 1
 static int math_log (lua_State *L) {
   lua_pushnumber(L, log(luaL_checknumber(L, 1)));
   return 1;
@@ -214,7 +214,7 @@ static int math_ldexp (lua_State *L) {
 }
 #endif
 
-#endif // #ifdef LUA_NUMBER_INTEGRAL
+//#endif // #ifdef LUA_NUMBER_INTEGRAL
 
 static int math_min (lua_State *L) {
   int n = lua_gettop(L);  /* number of arguments */
